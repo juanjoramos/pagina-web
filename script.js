@@ -56,3 +56,26 @@ setInterval(() => {
     moveSlide(1);
 }, 10000);
 
+$(document).ready(function() {
+    $(".menu-movil").hide();
+
+    // Mostrar/ocultar el menú
+    $(".logo-movil .logo-hambur").click(function() {
+        $(".menu-movil").slideToggle();
+        $(".logo-movil .logo-hambur").toggle();
+        $(".logo-movil .logo-error").toggle();
+    });
+
+    $(".logo-movil .logo-error").click(function() {
+        $(".menu-movil").slideToggle();
+        $(".logo-movil .logo-hambur").toggle();
+        $(".logo-movil .logo-error").toggle();
+    });
+
+    // Cerrar el menú cuando se haga clic en un enlace
+    $(".menu-movil a").click(function() {
+        $(".menu-movil").slideUp(); // Cierra el menú
+        $(".logo-movil .logo-hambur").show(); // Muestra el ícono de hamburguesa
+        $(".logo-movil .logo-error").hide(); // Oculta el ícono de error
+    });
+});
